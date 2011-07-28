@@ -187,7 +187,8 @@ class YouTubeIt
         if author_element
           author = YouTubeIt::Model::Author.new(
                      :name => author_element.elements["name"].text,
-                     :uri => author_element.elements["uri"].text)
+                     :uri => author_element.elements["uri"].text,
+                     :thumbnail_url => entry.elements["media:thumbnail"].attributes["url"])
         end
         media_group = entry.elements["media:group"]
 
